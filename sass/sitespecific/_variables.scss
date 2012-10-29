@@ -1,0 +1,55 @@
+// Fifty Shades of Gray
+
+$black:      hsl(0, 0%, 0%);
+$gray10:     hsl(0, 0%, 10%);
+$gray20:     hsl(0, 0%, 20%);
+$gray30:     hsl(0, 0%, 30%);
+$gray40:     hsl(0, 0%, 40%);
+$gray50:     hsl(0, 0%, 50%);
+$gray60:     hsl(0, 0%, 60%);
+$gray70:     hsl(0, 0%, 70%);
+$gray80:     hsl(0, 0%, 80%);
+$gray90:     hsl(0, 0%, 90%);
+$white:      hsl(0, 0%, 100%);
+
+// Colour My World
+
+$blue:       hsl(198, 96%, 44%);
+$blueDark:   hsl(211, 100%, 40%);
+$green:      hsl(120, 40%, 46%);
+$red:        hsl(4, 69%, 36%);
+$yellow:     hsl(53, 100%, 53%);
+$orange:     hsl(35, 95%, 50%);
+$pink:       hsl(341, 59%, 48%);
+$purple:     hsl(269, 46%, 49%);
+
+// Brand Colors
+
+$brand1:     hsl(240, 100%, 27%);
+$brand2:     hsl(37, 79%, 57%);
+
+// Grid
+
+$pagewidth:  1140px;
+$gutter:     20px;
+
+// Typography
+
+$bodycolor: $gray10;
+$headercolor: $gray20;
+$headerfontweight: bold;
+
+$bodyfontfamily: Georgia, "Times New Roman", serif;
+$headerfontfamily: "Bookman Old Style", Georgia, "Times New Roman", serif;
+$alternatefontfamily: "Helvetica Neue", Helvetica, Arial, Verdana, sans-serif;
+
+$linkcolor: $brand1;
+$linkcolorhover: $brand2;
+
+$ratio: 1.61803398875; // Golden Ratio
+$basesize: 13px;
+
+// Other
+
+$tableborder: 1px solid $gray80;
+$inputborder: $brand2;

@@ -1,0 +1,27 @@
+%row {
+  width: 100%;
+  max-width: $pagewidth;
+  margin: 0 auto;
+}
+
+%col {
+  float: left;
+  padding: 0 $gutter / 2 0 $gutter / 2;
+  padding: inherit; 
+}
+
+%last {
+  float: left;
+}
+
+@mixin col($numerator, $denominator) {
+  width: 100% / $denominator * $numerator;
+}
+
+@mixin push($numerator, $denominator) {
+  margin-left: 100% / $denominator * $numerator;
+}
+
+@mixin pull($numerator, $denominator) {
+  margin-left: -100% / $denominator * $numerator;
+}

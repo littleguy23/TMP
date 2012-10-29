@@ -1,0 +1,43 @@
+.page-wrap {
+  @extend %row;
+  width: 98%;
+}
+
+.super-nav {
+  margin-top: 10px;
+  @extend %row;
+
+  ul {
+    @extend ul.unstyled;
+    @extend ul.inline;
+    @extend %col;
+    @include col(3,4);
+    display: inline;
+
+    li {
+      padding: 0 5px;
+      border-right: 1px solid $bodycolor;
+
+      &:last-of-type {
+        border-right: none;
+      }
+    }
+  }
+
+  a {
+    color: $bodycolor;
+
+    &:hover {
+      color: $bodycolor;
+      text-decoration: underline;
+    }
+  }
+}
+
+.supersearch {
+  @extend .search;
+  @extend .input-append;
+  @extend form.small;
+  @extend %col;
+  @include col(1,4);
+}

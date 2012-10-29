@@ -1,0 +1,225 @@
+form {
+  margin-bottom: $basesize * $ratio / 2;
+  font-family: $alternatefontfamily;
+  font-size: $basesize;
+  line-height: $basesize * $ratio;
+}
+
+fieldset {
+  @include reset-box-model;
+}
+
+legend {
+  display: block;
+  width: 100%;
+  padding: 0;
+  margin-bottom: $basesize * $ratio / 2;
+  font-size: $basesize * 1.5;
+  line-height: $basesize * 1.5 * $ratio;
+  border: 0;
+  border-bottom: 1px solid $gray80;
+}
+
+input, button, select, textarea {
+  font-family: $alternatefontfamily;
+  font-size: $basesize;
+  line-height: $basesize * $ratio;
+}
+
+form.small {
+  input, button, select, textarea {
+    font-size: $basesize;
+    line-height: $basesize * $ratio / 2;
+  }
+
+  select, textarea, input[type="text"], input[type="password"], input[type="datetime"], input[type="datetime-local"], input[type="date"], input[type="month"], input[type="time"], input[type="week"], input[type="number"], input[type="email"], input[type="url"], input[type="search"], input[type="tel"], input[type="color"], .uneditable-input {
+    padding: 2px 6px;
+  }
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+
+  &.checkbox {
+    font-weight: normal;
+  }
+}
+
+select, textarea, input[type="text"], input[type="password"], input[type="datetime"], input[type="datetime-local"], input[type="date"], input[type="month"], input[type="time"], input[type="week"], input[type="number"], input[type="email"], input[type="url"], input[type="search"], input[type="tel"], input[type="color"], .uneditable-input {
+  display: inline-block;
+  padding: 4px 6px;
+  margin-bottom: 9px;
+  color: $gray40;
+  @include border-radius(2px);
+  border: 1px solid $gray80;
+
+  &:hover {
+    border: 1px solid $inputborder;
+  }
+
+  &:focus {
+    outline: 0;
+    border: 1px solid $inputborder;
+    @include box-shadow(0 0 4px $inputborder);
+  }
+}
+
+input[type="radio"], input[type="checkbox"] {
+  margin: 4px 0 0;
+  *margin-top: 0; /* IE7 */
+  margin-top: 1px \9; /* IE8-9 */
+  line-height: normal;
+  cursor: pointer;
+}
+
+input[type="file"], input[type="image"], input[type="submit"], input[type="reset"], input[type="button"], input[type="radio"], input[type="checkbox"] {
+  width: auto
+}
+
+select, input[type="file"] {
+  height: 30px; /* In IE7, the height of the select element cannot be changed by height, only font-size */
+  *margin-top: 4px; /* For IE7, add top margin to align select with labels */
+  line-height: 30px;
+}
+
+select {
+  width: 220px;
+  border: 1px solid $inputborder;
+  background-color: $white;
+}
+
+form.inline {
+  display: inline;
+  
+  input, button, label {
+    display: inline;
+  }
+}
+
+form.search {
+  @extend form.inline;
+
+  input {
+    @include border-radius(100px);
+  }
+}
+
+form.horizontal {
+  dl {
+    @include reset-box-model;
+    @include clearfix;
+  }
+
+  dt {
+    @include col(1,5);
+    padding-right: 10px;
+    text-align: right;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    float: left;
+    clear: left;
+  }
+
+  dd {
+    @include col(4,5);
+    @include push(1,5);
+  }
+}
+
+.checkbox.inline, .radio.inline {
+  display: inline;
+}
+
+button, input[type=submit], input[type="reset"], input[type="button"] {
+  @extend .btn;
+}
+
+.input-append, .input-prepend {
+  margin-bottom: 5px;
+  font-size: 0;
+  white-space: nowrap; // Prevent span and input from separating
+
+  input, select, .uneditable-input {
+    position: relative; // placed here by default so that on :focus we can place the input above the .add-on for full border and box-shadow goodness
+    margin-bottom: 0; // prevent bottom margin from screwing up alignment in stacked forms
+    *margin-left: 0;
+    font-size: $basesize;
+    @include border-radius(0 2px 2px 0);
+
+    &:focus {
+      z-index: 2;
+    }
+  }
+  .add-on {
+    display: inline-block;
+    width: auto;
+    min-width: 16px;
+    padding: 4px 5px;
+    font-size: $basesize;
+    font-weight: normal;
+    line-height: $basesize * $ratio;
+    text-align: center;
+    text-shadow: 0 1px 0 $white;
+    background-color: $gray80;
+    border: 1px solid #ccc;
+  }
+
+  .add-on,   .btn {
+    //vertical-align: top;
+    @include border-radius(0);
+  }
+}
+.input-prepend {
+  .add-on,   .btn {
+    margin-right: -1px;
+  }
+  .add-on:first-child, .btn:first-child {
+    @include border-radius(2px 0 0 2px);
+  }
+
+  &.search {
+    .add-on:first-child, .btn:first-child {
+      @include border-radius(100px 0 0 100px);
+    }
+  }
+}
+.input-append {
+  input, select, .uneditable-input {
+    @include border-radius(2px 0 0 2px);
+  }
+
+  &.search {
+    input[type="text"], input[type="password"], input[type="datetime"], input[type="datetime-local"], input[type="date"], input[type="month"], input[type="time"], input[type="week"], input[type="number"], input[type="email"], input[type="url"], input[type="search"], input[type="tel"], input[type="color"], select, .uneditable-input { // Specificity's a bitch.
+      @include border-radius(100px 0px 0px 100px);
+    }
+  }
+  .add-on,   .btn {
+    margin-left: -1px;
+  }
+  .add-on:last-child,   .btn:last-child {
+    @include border-radius(0 2px 2px 0);
+  }
+
+  &.search {
+    .add-on:last-child,   .btn:last-child {
+      @include border-radius(0 100px 100px 0);
+    }
+  }
+}
+// Remove all border-radius for inputs with both prepend and append
+.input-prepend.input-append {
+  input,   select,   .uneditable-input {
+    @include border-radius(0);
+  }
+  .add-on:first-child,   .btn:first-child {
+    margin-right: -1px;
+    @include border-radius(2px 0 0 2px);
+  }
+  .add-on:last-child,   .btn:last-child {
+    margin-left: -1px;
+    @include border-radius(0 2px 2px 0);
+  }
+}

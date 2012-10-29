@@ -1,0 +1,4 @@
+*, *:before, *:after {
+  @include box-sizing(border-box);
+  @include transition(all 0.3s ease);
+}

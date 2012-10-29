@@ -1,0 +1,43 @@
+table {
+  font-family: $alternatefontfamily;
+}
+
+tr, thead {
+  border-bottom: $tableborder;
+}
+
+tr:last-of-type {
+  border-bottom: none;
+}
+
+td, th {
+  padding: $basesize / 2 $basesize * 1.5 $basesize / 2 $basesize
+}
+
+th {
+  text-align: left;
+}
+
+table.bordered {
+  border-top: $tableborder;
+  border-left: $tableborder;
+
+  td, th {
+    border-bottom: $tableborder;
+    border-right: $tableborder;
+  }
+}
+
+table.condensed {
+  td, th {
+    padding: $basesize / 4 $basesize * 0.75 $basesize / 4 $basesize / 2
+  }
+}
+
+table.striped tbody tr:nth-child(even) {
+  background-color: hsl(0, 0%, 95%);
+}
+
+table.hover tbody tr:hover {
+  background-color: $gray90;
+}

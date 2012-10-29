@@ -1,0 +1,55 @@
+.home {
+  header.main {
+    border: 1px solid $black;
+    border-bottom-width: 2px;
+    @extend %row.padding;
+    @extend %row;
+
+    h1 {
+      color: $black;
+      text-transform: uppercase;
+      font-weight: normal;
+      font: 62px/65px;
+      @extend %col;
+      @include col(3,5);
+      @include push(1,5);
+      text-align: center;
+
+      span {
+        font-size: 65px;
+      }
+    }
+
+    %blackbox {
+      @extend %col;
+      @include col(1,5);
+      background-color: $black;
+      color: $white;
+      font-family: $bodyfontfamily;
+      font-size: 15px;
+      line-height: 15px;
+      font-weight: normal;
+      height: 100%;
+      text-align: center;
+      height: 50px;
+      @include border-radius(4px);
+    }
+
+    .blackbox-1 {
+      @extend %blackbox;
+      @include pull(4,5);
+    }
+
+    .blackbox-2 {
+      @extend %blackbox;
+    }
+
+    .next-issue {
+      width: 100%;
+      position: absolute;
+      text-align: center;
+      color: $black;
+      top: 100px;
+    }
+  }
+}
