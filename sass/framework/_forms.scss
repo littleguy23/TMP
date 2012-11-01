@@ -29,7 +29,8 @@ input, button, select, textarea {
 form.small {
   input, button, select, textarea {
     font-size: $basesize;
-    line-height: $basesize * $ratio / 2;
+    line-height: $basesize;
+    margin-bottom: 0;
   }
 
   select, textarea, input[type="text"], input[type="password"], input[type="datetime"], input[type="datetime-local"], input[type="date"], input[type="month"], input[type="time"], input[type="week"], input[type="number"], input[type="email"], input[type="url"], input[type="search"], input[type="tel"], input[type="color"], .uneditable-input {
@@ -92,7 +93,7 @@ select {
 
 form.inline {
   display: inline;
-  
+
   input, button, label {
     display: inline;
   }

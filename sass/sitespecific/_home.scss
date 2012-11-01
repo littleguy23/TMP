@@ -2,8 +2,8 @@
   header.main {
     border: 1px solid $black;
     border-bottom-width: 2px;
-    @extend %row.padding;
-    @extend %row;
+    @extend %row-padding;
+    position: relative;
 
     h1 {
       color: $black;
@@ -19,37 +19,89 @@
         font-size: 65px;
       }
     }
+  }
+}
 
-    %blackbox {
+%blackbox {
+  @extend %col;
+  @include col(1,5);
+  background-color: $black;
+  color: $white;
+  font-family: $bodyfontfamily;
+  font-size: 15px;
+  line-height: 15px;
+  font-weight: normal;
+  height: 100%;
+  text-align: center;
+  height: 77px;
+  @include border-radius(4px);
+  margin-bottom: 0;
+}
+
+.blackbox-1 {
+  @extend %blackbox;
+  @include pull(4,5);
+  padding-top: 13px;
+}
+
+.blackbox-2 {
+  @extend %blackbox;
+  padding-top: 22px;
+}
+
+.next-issue {
+  width: 100%;
+  position: absolute;
+  text-align: center;
+  color: $black;
+  left: 0;
+  top: 60px;
+}
+
+.home {
+  .blogs {
+    background-color: hsl(93, 79%, 21%);
+    border: 2px solid $gray50;
+    border-top: none;
+    @extend %row-padding;
+
+    h1, a {
+      font-family: $alternatefontfamily;
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 28px;
+      line-height: 32px;
+    }
+
+    a {
+      color: $gray90;
+
+      &:hover {
+        color: $gray70;
+      }
+    }
+
+    li {
+      display: inline;
+      list-style-type: none;
       @extend %col;
       @include col(1,5);
-      background-color: $black;
-      color: $white;
-      font-family: $bodyfontfamily;
-      font-size: 15px;
-      line-height: 15px;
-      font-weight: normal;
-      height: 100%;
-      text-align: center;
-      height: 50px;
-      @include border-radius(4px);
-    }
 
-    .blackbox-1 {
-      @extend %blackbox;
-      @include pull(4,5);
-    }
+      .blogname {
+        font-size: 18px;
+        display: block;
+      }
 
-    .blackbox-2 {
-      @extend %blackbox;
-    }
-
-    .next-issue {
-      width: 100%;
-      position: absolute;
-      text-align: center;
-      color: $black;
-      top: 100px;
+      img {
+        display: inline;
+        float: left;
+        @include border-radius(8px);
+        margin-right: 5px;
+      }
     }
   }
+
+  .main-news-place {}
 }

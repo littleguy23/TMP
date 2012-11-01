@@ -3,10 +3,11 @@
   max-width: $pagewidth + $gutter;
   margin: 0 auto;
   @include clearfix;
+}
 
-  &.padding {
+%row-padding {
+    @extend %row;
     padding: $gutter / 3 $gutter / 2;
-  }
 }
 
 %col {

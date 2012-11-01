@@ -6,31 +6,31 @@
 
 <?php
 // Query the database
-$news_query = mysql_query("SELECT * 
+$news_query = mysql_query("SELECT *
   FROM articles
   INNER JOIN authors ON articles.author_id = authors.author_id
   INNER JOIN issues ON articles.issue_id = issues.issue_id
   WHERE category_id = 1
   LIMIT 0, 5
   ");
-  
-$opinion_query = mysql_query("SELECT * 
+
+$opinion_query = mysql_query("SELECT *
   FROM articles
   INNER JOIN authors ON articles.author_id = authors.author_id
   INNER JOIN issues ON articles.issue_id = issues.issue_id
   WHERE category_id = 2
   LIMIT 0, 3
   ");
-  
-$sports_query = mysql_query("SELECT * 
+
+$sports_query = mysql_query("SELECT *
   FROM articles
   INNER JOIN authors ON articles.author_id = authors.author_id
   INNER JOIN issues ON articles.issue_id = issues.issue_id
   WHERE category_id = 3
   LIMIT 0, 3
   ");
-  
-$arts_query = mysql_query("SELECT * 
+
+$arts_query = mysql_query("SELECT *
   FROM articles
   INNER JOIN authors ON articles.author_id = authors.author_id
   INNER JOIN issues ON articles.issue_id = issues.issue_id
@@ -38,14 +38,14 @@ $arts_query = mysql_query("SELECT *
   LIMIT 0, 3
   ");
 
-$blog_query = mysql_query("SELECT * 
+$blog_query = mysql_query("SELECT *
   FROM blogs
   INNER JOIN authors ON blogs.author_id = authors.author_id
   ");
 
 ?>
 
-<section class="head-widget blogs">
+<section class="blogs">
   <h1><a href="/blogs/">Editors' Blogs</a></h1>
   <ul>
     <?php
@@ -56,13 +56,13 @@ $blog_query = mysql_query("SELECT *
       $id = $rows["blog_id"];
       $author_id = $rows["author_id"];
       $blog_desc = $rows["blog_desc"];
-        
+
       echo("
         <li><img src=\"/img/blogs/$id.png\" alt=\"$blog\">
         <a href=\"/blogs/blog.php?id=$id\" class=\"blogname\">$blog</a>
         <a href=\"/author.php?id=$author_id\" class=\"author\">$author</a></li>
         ");
-      
+
       endwhile;
     ?>
   </ul>
@@ -70,7 +70,7 @@ $blog_query = mysql_query("SELECT *
 
 <section class="main-news-place">
 
-  <section class="articles news"> 
+  <section class="articles news">
     <header><h1>News</h1></header>
     <?php homepage_articles($news_query) ?>
   </section>
@@ -81,7 +81,7 @@ $blog_query = mysql_query("SELECT *
       <header><h1>Opinion</h1></header>
       <?php homepage_articles($opinion_query) ?>
     </section>
-      
+
     <section class="articles sports">
       <header><h1>Sports</h1></header>
       <?php homepage_articles($sports_query) ?>
@@ -95,7 +95,7 @@ $blog_query = mysql_query("SELECT *
       <header><h1>Arts &amp; Entertainment</h1></header>
       <?php homepage_articles($arts_query) ?>
     </section>
-      
+
     <section class="other-crap">
       <header><h1>Other Crap Goes Here</h1></header>
     </section>
